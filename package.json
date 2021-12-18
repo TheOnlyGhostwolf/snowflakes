@@ -1,0 +1,32 @@
+{
+  "name": "snowflakes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devRegisterInteractions": "node setup/registerInteractions development",
+    "registerInteractions": "node setup/registerInteractions production",
+    "start": "node src/index production",
+    "dev": "node src/index development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FroggyWTF/snowflakes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FroggyWTF/snowflakes/issues"
+  },
+  "homepage": "https://github.com/FroggyWTF/snowflakes#readme",
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "mongoose": "^6.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
