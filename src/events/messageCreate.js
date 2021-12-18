@@ -25,7 +25,7 @@ module.exports = async (client, message) => {
     const collected = await sentMessage.awaitMessageComponent({ filter, time: 10000 });
     const points = await database.getUserPoints(message.guild.id, collected.user.id);
     await database.setUserPoints(message.guild.id, collected.user.id, points + 1);
-    sentMessage.edit({ content: `${emojis.main} <@${collected.user.id}> caught the snowflake!`, embeds: [new Discord.MessageEmbed().setColor('NOT_QUITE_BLACK').setImage(`${overlays}${collected.user.id}/${collected.user.avatar}`)], components: [] });
+    sentMessage.edit({ content: `${emojis.main} <@${collected.user.id}> caught the snowflake!`, embeds: [new Discord.MessageEmbed().setColor('#262335').setImage(`${overlays}${collected.user.id}/${collected.user.avatar}`)], components: [] });
     setTimeout(() => {
       sentMessage.delete();
     }, 10000);
