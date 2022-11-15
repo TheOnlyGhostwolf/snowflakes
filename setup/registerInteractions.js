@@ -10,7 +10,7 @@ const { token } = require('../src/config')[process.argv.includes('development') 
 const client = new Discord.Client({ intents: [] });
 
 const interactionArray = [];
-fs.readdir('./src/commands', (err, files) => {
+fs.readdir('../src/commands', (err, files) => {
   if (err) return console.error(err);
   const commands = files.filter((f) => !f.startsWith('_') && f.endsWith('.js')).map((f) => f.slice(0, -3));
   commands.forEach((command) => {

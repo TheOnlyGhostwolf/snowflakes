@@ -9,9 +9,9 @@
 const fs = require('fs');
 
 module.exports.loadCommands = (client) => new Promise((resolve, reject) => {
-  fs.readdir('./src/commands', (err, files) => {
+  fs.readdir('./commands', (err, files) => {
     if (err) return reject(err);
-    fs.readdir('./src/commands/config', (err, configFiles) => {
+    fs.readdir('./commands/config', (err, configFiles) => {
       if (err) return reject(err);
       files = files.filter((f) => !f.startsWith('_') && f.endsWith('.js')).map((f) => f.slice(0, -3));
       configFiles = configFiles.filter((f) => !f.startsWith('_') && f.endsWith('.js')).map((f) => f.slice(0, -3));
@@ -31,7 +31,7 @@ module.exports.loadCommands = (client) => new Promise((resolve, reject) => {
 });
 
 module.exports.loadEvents = (client) => new Promise((resolve, reject) => {
-  fs.readdir('./src/events', (err, files) => {
+  fs.readdir('./events', (err, files) => {
     if (err) return reject(err);
     const events = files.filter((f) => !f.startsWith('_') && f.endsWith('.js')).map((f) => f.slice(0, -3));
     events.forEach((event) => {
