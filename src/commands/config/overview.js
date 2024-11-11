@@ -2,6 +2,7 @@ const { emojis } = require('../../config');
 
 module.exports.execute = async (client, interaction) => {
   const data = await process.configurations.get(interaction.guildId);
+  if (!data) return interaction.reply('No data saved!');
   interaction.reply({
     content: [
       `${emojis.wave} Hello! Here's how this server is configured:`,
